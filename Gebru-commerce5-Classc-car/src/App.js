@@ -201,9 +201,14 @@ class App extends React.Component{
 
                 .filter(carr => {
                 return this.state.maxPreco === "" || carr.preco >= this.state.maxPreco})
+
+                // .map(carr =>{
+                //   return 
+                // })
                             
                 }
 
+                
                 
                             
 
