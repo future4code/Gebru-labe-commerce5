@@ -79,11 +79,16 @@ const DescriçãoCard = styled.div`
 `;
 
 
-const Carros = [
+class App extends React.Component{
+
+  state = {
+    
+    carros:[
+    
   {
     id: 1,
     foto:'https://i0.wp.com/thegarage.com.br/wp-content/uploads/2022/02/1975-bmw-2002-turbo-a-venda-sao-paulo-sp-for-sale-the-garage-classicos-carros-antigos-2-1.jpg?w=1600&ssl=1',
-    modelo:"BMW 2002 Turbo" ,
+    modelo:"BMW 2002 Turbo",
     ano: Number(1975) ,
     preco: Number(189900),
   },
@@ -135,47 +140,54 @@ const Carros = [
     modelo:'Volkswagen Kombi Rat Look' ,
     ano:Number(1975) ,
     preco: Number(64900) ,
-  }];
+  }],
 
- const ListaDeCarros = Carros.map(
+  buscarInput: "",
 
-  (car , i ) => {
+  };
 
-    return(
-      <DivCard >
-          <ImgCarros src ={car.foto}/>
-          <DescriçãoCard>
-            <h3> {car.modelo}</h3>
-            <p>Ano: {car.ano}</p>
-            <p> R${car.preco},00</p>
 
-            <DibButton>
-                 <button>-</button>
-                <CarrinhoImg alt="Carrinho" src="https://cdn-icons-png.flaticon.com/512/126/126510.png"/>
-                 <button >+</button> 
-             </DibButton>
-        </DescriçãoCard>
-      </DivCard>
-    
-    )
+  onChangInputBuscar = (event) => {
+
+    this.setState({buscarInput: event.target.value})
   }
 
-     
- );
-
-
-class App extends React.Component{
-
-  
-
   render(){
+
+   const ListaDeCarros = this.state.carros.map(
+
+      (car , i ) => {
+    
+        return(
+          <DivCard key={i.id}>
+              <ImgCarros src ={car.foto}/>
+              <DescriçãoCard>
+                <h3> {car.modelo}</h3>
+                <p>Ano: {car.ano}</p>
+                <p> R${car.preco},00</p>
+    
+                <DibButton>
+                     <button>-</button>
+                    <CarrinhoImg alt="Carrinho" src="https://cdn-icons-png.flaticon.com/512/126/126510.png"/>
+                     <button >+</button> 
+                 </DibButton>
+            </DescriçãoCard>
+          </DivCard>
+        
+        )
+      }
+         
+     ); 
 
     return (
 
           <Container>
               <Header/>
               <HeaderTwo/> 
-              <HeadertThree/> 
+              <HeadertThree
+                // buscarInput={this.state.buscarInput}
+                // onChangInputBuscar={this.onChangInputBuscar}
+              /> 
             <ContainerHome>
               
               {ListaDeCarros}

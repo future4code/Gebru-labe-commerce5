@@ -100,6 +100,8 @@ const ButtonCarrinho = styled.button`
 
 export default class HeadertThree extends React.Component{
 
+    
+
     render() {
 
         return (
@@ -112,7 +114,15 @@ export default class HeadertThree extends React.Component{
                     
                 </NavDiv>
                 <HDivInput>
-                     <HInput placeholder='buscar'/>  
+                     <HInput
+
+                      type="text" 
+                      placeholder='Buscar'
+                    //   value={this.props.state.buscarInput}
+                    //   onChange={this.props.onChangInputBuscar}
+                      
+                      
+                      />  
                         <ButtoonBuscar>
                             <ImgButtonBuscar alt='buscar' src ='https://www.connexion.com.br/wp-content/uploads/2018/10/698627-icon-111-search-512.png' />
                         </ButtoonBuscar>
