@@ -162,6 +162,7 @@ class App extends React.Component{
       return modelos.modelo.toLocaleLowerCase().includes(this.state.buscarInput.toLocaleLowerCase());
 
     }))
+
     .map((car,i) =>{
       return(
         <DivCard key={i.id}>
