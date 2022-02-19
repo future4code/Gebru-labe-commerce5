@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+// import Acessorios from "./Componentes/Acessorios";
+
 
 
 const ContainerHT = styled.div`
@@ -8,9 +10,13 @@ const ContainerHT = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    
+   
     background-color: #FE2E2E;
     align-items: center;
+
+    &:s{
+        position: fixed;
+    }
 
 `;
 const NavDiv = styled.nav`
@@ -114,7 +120,7 @@ export default class HeadertThree extends React.Component{
             <ContainerHT>
                 <NavDiv>
                     <NavA href="">Home</NavA>
-                    <NavA1  NavA1 href="">Marcas</NavA1>
+                    <NavA1 href="">Marcas</NavA1>
                     <NavA2 href="">Acessórios</NavA2>
                     
                 </NavDiv>

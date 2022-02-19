@@ -4,6 +4,7 @@ import styled from 'styled-components';
 // import Header from './Componentes/Header';
 import HeaderTwo from './Componentes/HeaderTwo';
 import HeadertThree from './Componentes/HeaderThree';
+
 // import Footer from './Componentes/Footer';
 
 
@@ -59,8 +60,8 @@ const DibButton = styled.div`
       
     align-items: center;
      border: 1px solid black;
-     width: 24%;
-    height: 65vh;
+     width: 320px;
+    height: 630px;
 
  `;
 
@@ -191,6 +192,7 @@ class App extends React.Component{
               <HeadertThree
                 buscarInput = {this.state.buscarInput}
                 onChangInputBuscar = {this.onChangInputBuscar}
+                
               /> 
             <ContainerHome>
               
