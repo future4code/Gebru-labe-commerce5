@@ -1,10 +1,10 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import Header from './Componentes/Header';
+// import Header from './Componentes/Header';
 import HeaderTwo from './Componentes/HeaderTwo';
 import HeadertThree from './Componentes/HeaderThree';
-import Footer from './Componentes/Footer';
+// import Footer from './Componentes/Footer';
 
 
 
@@ -186,7 +186,7 @@ class App extends React.Component{
     return (
 
           <Container>
-              <Header/>
+              {/* <Header/> */}
               <HeaderTwo/> 
               <HeadertThree
                 buscarInput = {this.state.buscarInput}
@@ -197,7 +197,7 @@ class App extends React.Component{
               {novaListaCars}
               
             </ContainerHome>
-              <Footer/>
+              {/* <Footer/> */}
           </Container>
 
 
