@@ -6,8 +6,6 @@ import HeaderTwo from './Componentes/HeaderTwo';
 import HeadertThree from './Componentes/HeaderThree';
 import Footer from './Componentes/Footer';
 
-// teste
-
 const Container = styled.div`
   
   display: flex;
@@ -40,8 +38,8 @@ const ImgCarros =styled.img`
 
 const DibButton = styled.div`
     
-     /* width: 150px;
-    height: 100px; */
+     width: 150px;
+    height: 100px;
      display: flex;
      justify-content: center;
      gap: 10px;
@@ -66,7 +64,7 @@ const DibButton = styled.div`
  `;
 
 const DescriçãoCard = styled.div`
-    /* background-color:#FE2E2E; */
+    background-color:#FE2E2E;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -139,7 +137,7 @@ const Carros = [
 
  const ListaDeCarros = Carros.map(
 
-  (car , i ) => {
+  (car ) => {
 
     return(
       <DivCard >
@@ -166,7 +164,26 @@ const Carros = [
 
 class App extends React.Component{
 
-  
+  state = {
+
+
+    Carro:ListaDeCarros,
+    MinPreco:"",
+    maxPreco:"",
+    query:""
+  }
+
+  updateMinPreco = (ev)=> {
+    this.setState({
+      MinPreco:ev.target.value
+    })
+  }
+
+  updatemaxPreco = (ev)=> {
+    this.setState({
+      maxPreco:ev.target.value
+    })
+  }
 
   render(){
 
@@ -176,14 +193,42 @@ class App extends React.Component{
               <Header/>
               <HeaderTwo/> 
               <HeadertThree/> 
-            <ContainerHome>
-              
-              {ListaDeCarros}
-              
+            <ContainerHome >
+
+              {this.state.Carro
+              .filter(carr => {
+                return this.state.MinPreco === "" || carr.preco >= this.state.MinPreco})
+
+                .filter(carr => {
+                return this.state.maxPreco === "" || carr.preco >= this.state.maxPreco})
+
+                // .map(carr =>{
+                //   return 
+                // })
+                            
+                }
+
+                
+                
+                            
+
             </ContainerHome>
               <Footer/>
 
+              <div> 
+                <h2>filtro</h2>
+                <input
+                type="Number"
+                placeHolder="preço Minimo"
+                value={this.state.MinPreco}
+                onChange={this.updateMinPreco}/>
 
+                <input
+                type="Number"
+                placeHolder="preço Maximo"
+                value={this.state.maxPreco}
+                onChange={this.updatemaxPreco}/>
+                </div>
           </Container>
 
 
