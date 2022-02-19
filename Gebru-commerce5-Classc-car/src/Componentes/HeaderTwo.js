@@ -24,6 +24,8 @@ const Hp = styled.p`
    
 `;
 export default class HeaderTwo extends React.Component{
+
+    
     render(){
 
        return(

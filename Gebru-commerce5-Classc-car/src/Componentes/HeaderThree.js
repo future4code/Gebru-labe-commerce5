@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import App from "../App";
 
 const ContainerHT = styled.div`
     width: 100%;
@@ -100,10 +101,14 @@ const ButtonCarrinho = styled.button`
 
 export default class HeadertThree extends React.Component{
 
+
     
 
     render() {
 
+         
+
+            
         return (
 
             <ContainerHT>
@@ -117,9 +122,9 @@ export default class HeadertThree extends React.Component{
                      <HInput
 
                       type="text" 
-                      placeholder='Buscar'
-                    //   value={this.props.state.buscarInput}
-                    //   onChange={this.props.onChangInputBuscar}
+                      
+                      value={this.props.buscarInput}
+                      onChange={this.props.onChangInputBuscar}
                       
                       
                       />  

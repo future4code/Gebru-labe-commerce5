@@ -147,6 +147,8 @@ class App extends React.Component{
   };
 
 
+
+
   onChangInputBuscar = (event) => {
 
     this.setState({buscarInput: event.target.value})
@@ -154,30 +156,32 @@ class App extends React.Component{
 
   render(){
 
-   const ListaDeCarros = this.state.carros.map(
-
-      (car , i ) => {
     
-        return(
-          <DivCard key={i.id}>
-              <ImgCarros src ={car.foto}/>
+    const novaListaCars = this.state.carros
+    .filter((modelos =>{
+      return modelos.modelo.toLocaleLowerCase().includes(this.state.buscarInput.toLocaleLowerCase());
+
+    }))
+    .map((car,i) =>{
+      return(
+        <DivCard key={i.id}>
+         <ImgCarros src ={car.foto}/>
               <DescriçãoCard>
                 <h3> {car.modelo}</h3>
                 <p>Ano: {car.ano}</p>
                 <p> R${car.preco},00</p>
-    
-                <DibButton>
-                     <button>-</button>
-                    <CarrinhoImg alt="Carrinho" src="https://cdn-icons-png.flaticon.com/512/126/126510.png"/>
-                     <button >+</button> 
+          
+               <DibButton>
+                <button>-</button>
+                <CarrinhoImg alt="Carrinho" src="https://cdn-icons-png.flaticon.com/512/126/126510.png"/>
+                <button >+</button> 
                  </DibButton>
-            </DescriçãoCard>
-          </DivCard>
-        
-        )
-      }
-         
-     ); 
+              </DescriçãoCard>
+         </DivCard>
+      )
+
+    });
+
 
     return (
 
@@ -185,12 +189,12 @@ class App extends React.Component{
               <Header/>
               <HeaderTwo/> 
               <HeadertThree
-                // buscarInput={this.state.buscarInput}
-                // onChangInputBuscar={this.onChangInputBuscar}
+                buscarInput = {this.state.buscarInput}
+                onChangInputBuscar = {this.onChangInputBuscar}
               /> 
             <ContainerHome>
               
-              {ListaDeCarros}
+              {novaListaCars}
               
             </ContainerHome>
               <Footer/>
