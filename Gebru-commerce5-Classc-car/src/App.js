@@ -16,8 +16,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   background-color:  #E6E6E6;
-
-`
+`;
 const ContainerHome = styled.div`
     max-width: 70vw;
     height: 135vh;
@@ -30,7 +29,7 @@ const ContainerHome = styled.div`
     column-gap: 10px;
     justify-content: center;
 
-`
+`;
 
 const ImgCarros =styled.img`
     width: 324px;
@@ -199,8 +198,6 @@ class App extends React.Component{
               
             </ContainerHome>
               <Footer/>
-
-
           </Container>
 
 
