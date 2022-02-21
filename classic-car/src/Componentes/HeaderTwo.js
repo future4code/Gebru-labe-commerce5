@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const ContainerH2 = styled.div`
     background-color: #E6E6E6;
-    
+    margin-top: 40px;
     width: 100%;
     height: 25vh;
     display: grid;

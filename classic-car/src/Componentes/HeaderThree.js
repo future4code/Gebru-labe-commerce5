@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import Acessorios from "./Componentes/Acessorios";
-
 
 
 const ContainerHT = styled.div`
@@ -10,13 +8,9 @@ const ContainerHT = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-   
+    position: fixed;
     background-color: #FE2E2E;
     align-items: center;
-
-    &:s{
-        position: fixed;
-    }
 
 `;
 const NavDiv = styled.nav`
@@ -86,23 +80,32 @@ const ButtoonBuscar = styled.button`
 `
 const ImgButtonBuscar = styled.img`
     
-    width: 27px;
-    height: 32px;
+    width: 26px;
+    height: 30px;
     
 `;
 const ImgButton =styled.img`
 
     width: 35px;
-    height: 40px;
+    height: 35px;
 `
 const ButtonCarrinho = styled.button`
     background-color: #FE2E2E;
     border: none;
     margin-right: 100px;
+   
+  
 
     &:hover{
         background-color:  #E6E6E6 ;  
     }
+`
+const contador =styled.div`
+
+    font-size: 10px;
+    
+    
+
 `
 
 export default class HeadertThree extends React.Component{
@@ -113,15 +116,15 @@ export default class HeadertThree extends React.Component{
     render() {
 
          
-
+        let contador = this.props.quantidade;
             
         return (
 
             <ContainerHT>
                 <NavDiv>
                     <NavA href="">Home</NavA>
-                    <NavA1 href="">Marcas</NavA1>
-                    <NavA2 href="">Acessórios</NavA2>
+                    <NavA1  NavA1 href="">Marcas</NavA1>
+                   
                     
                 </NavDiv>
                 <HDivInput>
@@ -139,8 +142,11 @@ export default class HeadertThree extends React.Component{
                         </ButtoonBuscar>
                    
                 </HDivInput>
-
-                <ButtonCarrinho ><ImgButton alt="carrinho" src="https://cdn-icons-png.flaticon.com/512/126/126510.png" /></ButtonCarrinho>
+                
+                <ButtonCarrinho  onClick={this.props.renderizaCarrinho }>
+                <div> {contador} </div>
+                    <ImgButton alt="carrinho" src="https://cdn-icons-png.flaticon.com/512/126/126510.png" />
+                </ButtonCarrinho>
 
             </ContainerHT>
 
